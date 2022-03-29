@@ -1,4 +1,4 @@
-import React from "react";
+/*import React from "react";
 import ReactDOM from "react-dom";
 
 function firt_letter () {
@@ -12,4 +12,4 @@ function app() {
     )
 }
 const rootElement = window.document.querySelector("#root");
-ReactDOM.render(<app /> , rootElement);
+ReactDOM.render(<app /> , rootElement);*/
