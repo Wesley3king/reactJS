@@ -1,14 +1,20 @@
-//import logo from './logo.svg';
-import Elemental from "./div";
+import Elemental from './Div';
+import Button from './Button';
 import './App.css';
+
+/*function soma () {
+  console.log("XXX");
+}*/
   function writing () {
     return (<p>modded by @king</p>)
   }
-function App() {
+  
+const App = ()=> {
   return (
     <div className="App">
       {writing()}
       <Elemental></Elemental>
+      <Button type="submit" onClick={()=>{console.log('gg izi')}}></Button>
     </div>
   );
 }
