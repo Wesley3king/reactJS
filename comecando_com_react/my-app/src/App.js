@@ -1,10 +1,8 @@
 import Elemental from './Div';
 import Button from './Button';
 import './App.css';
-
-/*function soma () {
-  console.log("XXX");
-}*/
+import Imagens from './Img';
+//const imagen2 = './logo512.png';
   function writing () {
     return (<p>modded by @king</p>)
   }
@@ -15,6 +13,11 @@ const App = ()=> {
       {writing()}
       <Elemental></Elemental>
       <Button type="submit" onClick={()=>{console.log('gg izi')}}></Button>
+
+      <p>aula 03 e 04 CFB - Cursos</p>
+      <Imagens>
+        
+      </Imagens>
     </div>
   );
 }
