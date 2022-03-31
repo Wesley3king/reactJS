@@ -1,24 +1,12 @@
-import logo from './logo.svg';
+import Paragrafos from './Paragrafos'
 import './App.css';
 
 function App() {
+  const dados = ['king of shadows', 16, 'programmer']
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <div>
+     <Paragrafos className="App" name={dados[0]} old={dados[1]} work={dados[2]}></Paragrafos>
+   </div>
   );
 }
 
