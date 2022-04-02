@@ -1,9 +1,10 @@
 import Section from './Section';
-
+import Relogio from './Relogio';
 function App() {
   return (
    <>
-   <Section ></Section>
+   <Section />
+   <Relogio />
    </>
   );
 }
