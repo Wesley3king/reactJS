@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import Header from './Header';
 import Externo from './Externo';
 import Sojs from './Sojs';
+import Event from './Event';
 import './App.css';
 
 function App() {
@@ -21,8 +22,13 @@ function App() {
       <Externo number={number} setNumber={setNumber}></Externo>
     </section>
     <Sojs />
+      <section>
+            <Event />
+      </section>
     </div>
+   
   );
 }
 
 export default App;
+//até #11 - eventos em react -
