@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React,{useState, useEffect} from "react";
 var vezes = 0;
 export default function Condicional () {
     ++vezes;
@@ -6,7 +6,8 @@ export default function Condicional () {
     const [cor,setCor] = useState({});
     const [num,setNum] = useState(0);
 
-    var initial = setInterval(()=>{
+    useEffect(()=>{
+    const initial = setInterval(()=>{
         if (num === 0) {
             setCor({color: "blue"});
         } else if (num === 1) {
@@ -14,8 +15,11 @@ export default function Condicional () {
         } else if (num === 2) {
             setCor({color: "red"});
         }
+        console.log(num);
         num === 2?setNum(num - 2):setNum(num+1);
     },1000);
+       return ()=> clearInterval(initial);
+    });
     
     const horario = ()=> {
         let time = new Date().getHours();
@@ -50,5 +54,4 @@ export default function Condicional () {
             </section>
         </>
     )
-    clearInterval(initial);
 }
