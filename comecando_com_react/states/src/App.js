@@ -3,6 +3,7 @@ import Header from './Header';
 import Externo from './Externo';
 import Sojs from './Sojs';
 import Event from './Event';
+import Condicional from './Condicional';
 import './App.css';
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
     <Sojs />
       <section>
             <Event />
+            <Condicional />
       </section>
     </div>
    
@@ -31,4 +33,4 @@ function App() {
 }
 
 export default App;
-//até #11 - eventos em react -
+//até #12 - renderização condicional em react -
