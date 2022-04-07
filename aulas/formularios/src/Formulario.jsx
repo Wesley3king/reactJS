@@ -5,7 +5,6 @@ export default function Formulario () {
     const [valor,setValor] = useState("");
     const [cor,setCor] = useState(`${sessionStorage.color? sessionStorage.color: "white"}`);
     const corpo = document.querySelector("body");
-    console.log(typeof cor)
     corpo.style.backgroundColor= cor;
 
     return (
