@@ -20,7 +20,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div className='center'>
       <State num={1} nota={data.nota1} setNota={handleSetNotas}/>
       <State num={2} nota={data.nota2} setNota={handleSetNotas}/>
       <State num={3} nota={data.nota3} setNota={handleSetNotas}/>
