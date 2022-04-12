@@ -1,6 +1,7 @@
 import React,{useState} from 'react';
 import State from './State';
 import Result from './Result';
+import Contencao from './Contencao';
 import './App.css';
 
 function App() {
@@ -21,12 +22,16 @@ function App() {
 
   return (
     <div className='center'>
+      <h1>#16 e 17 - elevação do state</h1>
       <State num={1} nota={data.nota1} setNota={handleSetNotas}/>
       <State num={2} nota={data.nota2} setNota={handleSetNotas}/>
       <State num={3} nota={data.nota3} setNota={handleSetNotas}/>
       <State num={4} nota={data.nota4} setNota={handleSetNotas}/>
       <section>
           <Result data={data}/>
+      </section>
+      <section>
+        <Contencao />
       </section>
     </div>
   );
