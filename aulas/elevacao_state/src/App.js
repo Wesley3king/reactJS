@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import State from './State';
 import Result from './Result';
 import Contencao from './Contencao';
+import Effect from './Effect';
 import './App.css';
 
 function App() {
@@ -31,7 +32,11 @@ function App() {
           <Result data={data}/>
       </section>
       <section>
+        <hr />
         <Contencao />
+      </section>
+      <section>
+        <Effect />
       </section>
     </div>
   );
