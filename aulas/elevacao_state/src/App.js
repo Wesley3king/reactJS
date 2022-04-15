@@ -3,6 +3,7 @@ import State from './State';
 import Result from './Result';
 import Contencao from './Contencao';
 import Effect from './Effect';
+import Localstorage from './Localstorage';
 import './App.css';
 
 function App() {
@@ -37,6 +38,9 @@ function App() {
       </section>
       <section>
         <Effect />
+      </section>
+      <section>
+        <Localstorage />
       </section>
     </div>
   );
