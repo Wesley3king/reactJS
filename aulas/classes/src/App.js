@@ -1,6 +1,7 @@
 import React from 'react';
 import Classe from './Classe';
 import State from './State';
+import State2 from './State2';
 import './App.css';
 
 function App() {
@@ -12,6 +13,9 @@ function App() {
     </div>
     <section className='App'>
       <State numero="22"/>
+    </section>
+    <section className='App'>
+      <State2 />
     </section>
     </>
   );
