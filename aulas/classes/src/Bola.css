@@ -1,0 +1,18 @@
+.bola{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: red;
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.bola2{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: green;
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
