@@ -2,6 +2,7 @@ import React from 'react';
 import Classe from './Classe';
 import State from './State';
 import State2 from './State2';
+import Bind from './Bind';
 import './App.css';
 
 function App() {
@@ -16,6 +17,9 @@ function App() {
     </section>
     <section className='App'>
       <State2 />
+    </section>
+    <section className='App'>
+      <Bind />
     </section>
     </>
   );
