@@ -4,6 +4,9 @@ import State from './State';
 import State2 from './State2';
 import Bind from './Bind';
 import Life from './Life';
+import Static from './Stacic';
+
+import Globais from './Globais';
 import './App.css';
 
 function App() {
@@ -11,7 +14,7 @@ function App() {
   return (
     <>
     <div className='App'>
-    <h1>CFB Cursos</h1>
+    <h1>{Globais.canal}</h1>
      <Classe valor="HELLO WORD!"/>
     </div>
     <section className='App'>
@@ -25,6 +28,9 @@ function App() {
     </section>
     <section className='App'>
       {valid ? <Life remove={valid} set={setValid}/> : ''}
+    </section>
+    <section className='App'>
+      <Static />
     </section>
     </>
   );
