@@ -5,19 +5,18 @@ import './App.css';
 
 function App() {
   const [page,setPage]=useState(0);
-  const [txt,setTxt] = useState("txt");
 
   useEffect(()=> {
-    let time = setInterval(()=>{let url = window.location.hash;
+   /* let time = setInterval(()=>{*/let url = window.location.hash;
       let res = url.split("#");
       if (res[1] === undefined) {
         console.log("inv")
       }else {
        setPage(parseInt(res[1]));
-      }},100);
-      return () => clearInterval(time);
+      }/*},100);
+      return () => clearInterval(time);*/
     
-  });
+  },[]);
 
   const load = () => {
     console.log(page);
@@ -31,7 +30,7 @@ function App() {
         <h1>seleção de paginas - #28</h1>
       </header>
       <main>
-        <button onClick={()=> {redirecionar(1); setTxt("texto1");}}>pagina 1</button>
+        <button onClick={()=> {redirecionar(1);}}>pagina 1</button>
         <button onClick={()=> redirecionar(2)}>pagina 2</button>
         <br/>
         <p>no _self não funciona</p>
@@ -44,9 +43,12 @@ function App() {
 
   const redirecionar = (v) =>{
     if (v === 1) {
+      
       window.location.assign("http://localhost:3000#1",'_self');
+      window.location.reload();
     }else if (v === 2) {
       window.location.assign("http://localhost:3000#2",'_self');
+      window.location.reload();
     }else {
       return <>
               <header>
@@ -63,7 +65,6 @@ function App() {
    <div className='App'>
     
     {load()}
-    <p>{txt}</p>
    </div>
   );
 }
