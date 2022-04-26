@@ -1,0 +1,10 @@
+.bt{
+    width: 75px;
+    height: 75px;
+    background-color: rgb(14, 14, 14);
+    border: 1px solid black;
+    color: white;
+}
+.line{
+    display: inline-block;
+}

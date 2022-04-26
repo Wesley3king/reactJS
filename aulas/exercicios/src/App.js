@@ -3,8 +3,13 @@ import React,{useState} from 'react';
 import Table from './Table';
 import Input from './Input';
 import Resultado from './Resultado';
+//#33 34 - imports
+import Teclado from './Teclado';
+import Tela from './Tela';
+import './Globais';
 
 import './App.css';
+import Globais from './Globais';
 
 const data = [
   {tipo: 'esportivo',preco: 120000,modelo: 't-cross'},
@@ -18,6 +23,30 @@ function App() {
   //#30 - estados
   const [alt,setAlt]=useState(0);
   const [peso,setPeso] = useState(0);
+
+//#33 - states
+const [fase,setFase] = useState(1);
+const [resultado,setResultado] = useState();
+
+const Motor = (v)=> {
+
+    if (v === "=") {
+      let exec = new Function('pv,op,sv','setResultado(pv op sv)');
+
+    }else if (typeof Number(v) === "number" && fase === 1) {
+        Globais.first = `${Globais.first}${v}`;
+    }else if (typeof Number(v) && fase === 3) {
+      Globais.thrird = `${Globais.thrird}${v}`
+    }else{
+      Globais.second = `${v}`;
+      setFase(3)
+    }
+}
+
+
+
+
+
 
   const verificar = ()=>{
     let li = [];
@@ -57,6 +86,15 @@ function App() {
         <Input frase="altura " valor={alt} conf={setAlt}/>
         <Resultado altura={Number(alt)} pes={Number(peso)}/>
         <Table />
+      </section>
+      <section>
+        <h2>#33,34  - calculadora</h2>
+        <br />
+          <div>
+            <Tela />
+
+            <Teclado />
+          </div>
       </section>
     </div>
   );
