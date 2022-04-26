@@ -9,4 +9,11 @@ th,td{
 table{
   margin: auto;
   margin-top: 15px;
+  border-collapse: collapse;
+}
+input{
+  margin: 4px;
+}
+button{
+  margin: 5px;
 }
