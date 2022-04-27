@@ -6,11 +6,8 @@ import Resultado from './Resultado';
 //#33 34 - imports
 import Teclado from './Teclado';
 import Tela from './Tela';
-import './Globais';
 
 import './App.css';
-import Globais from './Globais';
-
 const data = [
   {tipo: 'esportivo',preco: 120000,modelo: 't-cross'},
   {tipo: 'esportivo',preco: 110000,modelo: 'camaro'},
@@ -27,13 +24,30 @@ function App() {
 //#33 - states
 const [fase,setFase] = useState(1);
 const [resultado,setResultado] = useState();
+const [passo,setPasso] = useState(false);
+const [one,setOne] = useState('');
+const [two,setTwo] = useState('');
 
-const Motor = (v)=> {
+
+/*const Motor = (setR,v,setPas,passo)=> {
 
     if (v === "=") {
-      let exec = new Function('pv,op,sv','setResultado(pv op sv)');
-
-    }else if (typeof Number(v) === "number" && fase === 1) {
+      if (Globais.second === "+"){
+        setR(Number(Globais.first) + Number(Globais.thrird));
+      }else if (Globais.second === "-"){
+        setR(Number(Globais.first) - Number(Globais.thrird));
+      }else if (Globais.second === "*"){
+        setR(Number(Globais.first) * Number(Globais.thrird));
+      }else if (Globais.second === "/"){
+        setR(Number(Globais.first) / Number(Globais.thrird));
+      }else if (Globais.second === "raiz"){
+        setR(Math.sqrt(Number(Globais.first)));
+      }else if (Globais.second === "porcent"){
+          let inv = Number(Globais.first) * Number(Globais.thrird);
+        setR(inv / 100);
+      }
+      setPas(!passo);
+    }else if (typeof Number(v) === "number" && fase === 1 || v === ".") {
         Globais.first = `${Globais.first}${v}`;
     }else if (typeof Number(v) && fase === 3) {
       Globais.thrird = `${Globais.thrird}${v}`
@@ -41,7 +55,7 @@ const Motor = (v)=> {
       Globais.second = `${v}`;
       setFase(3)
     }
-}
+}*/
 
 
 
@@ -85,15 +99,15 @@ const Motor = (v)=> {
         <Input frase="peso " valor={peso} conf={setPeso}/>
         <Input frase="altura " valor={alt} conf={setAlt}/>
         <Resultado altura={Number(alt)} pes={Number(peso)}/>
-        <Table />
+        <Table/>
       </section>
-      <section>
+      <section className='calc'>
         <h2>#33,34  - calculadora</h2>
         <br />
           <div>
-            <Tela />
+            <Tela passo={passo} res={resultado} val={`${one}`}/>
 
-            <Teclado />
+            <Teclado  one={one} setOne={setOne} two={two} setTwo={setTwo} res={setResultado} setP={setPasso} pas={passo} fase={fase} setFase={setFase}/>
           </div>
       </section>
     </div>

@@ -17,3 +17,10 @@ input{
 button{
   margin: 5px;
 }
+
+.calc{
+  width: 310px;
+  margin: auto;
+  margin-bottom: 20px;
+  
+}
