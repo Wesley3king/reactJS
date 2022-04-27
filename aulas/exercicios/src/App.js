@@ -7,6 +7,9 @@ import Resultado from './Resultado';
 import Teclado from './Teclado';
 import Tela from './Tela';
 
+//#35 - 37 - imports
+import Jogo from './Jogo';
+
 import './App.css';
 const data = [
   {tipo: 'esportivo',preco: 120000,modelo: 't-cross'},
@@ -109,6 +112,14 @@ const [two,setTwo] = useState('');
 
             <Teclado  one={one} setOne={setOne} two={two} setTwo={setTwo} res={setResultado} setP={setPasso} pas={passo} fase={fase} setFase={setFase}/>
           </div>
+          <hr />
+      </section>
+      <section>
+        <h1>#35 - jogo da velha em react</h1>
+        <br />
+        <div>
+          <Jogo />
+        </div>
       </section>
     </div>
   );
