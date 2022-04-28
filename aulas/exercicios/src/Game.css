@@ -9,11 +9,11 @@
     border: 1px solid white;
 }
 .alinhar{
-    display: flex;
-    align-items: center;
-    margin: auto;
-    margin-bottom: 30px;
+    height: max-content;
+    margin-bottom: 60px;
     width: max-content;
+    margin: auto;
+    cursor: pointer;
 
 }
 .lateral{
@@ -40,4 +40,15 @@
 }
 .lineH{
     display: flex;
+}
+
+.control{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    background-color: rgba(0, 0, 0, 0.178);
+    height: 55px;
+
 }

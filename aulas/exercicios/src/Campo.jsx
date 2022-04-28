@@ -13,7 +13,7 @@ componentDidMount(){
     render () {
         return (
             <>
-            <div className="colocar" onClick={()=> this.mudar()}>
+            <div className="colocar" onClick={()=> this.props.click}>
                <p>{this.props.p}</p>
             </div>
             </>
