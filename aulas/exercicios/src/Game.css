@@ -7,6 +7,11 @@
     background-color: rgb(66, 66, 66);
     color: white;
     border: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3em;
+    font-family:'Montserrat', sans-serif;
 }
 .alinhar{
     height: max-content;
@@ -36,7 +41,7 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        font-family:'Montserrat', sans-serif;
+        
 }
 .lineH{
     display: flex;
@@ -50,5 +55,11 @@
     margin-bottom: 40px;
     background-color: rgba(0, 0, 0, 0.178);
     height: 55px;
+    margin-top: 20px;
 
+}
+
+p.zzz{
+    margin: 15px;
+    color: red;
 }

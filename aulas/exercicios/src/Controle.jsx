@@ -1,16 +1,14 @@
 import React from 'react';
 
 export default class Controle extends React.Component {
-
+constructor (props) {
+    super(props);
+    this.val = this.props.play;
+}
 
     render () {
         return (
-            <>
-             <div className='control'>
-                 {console.log(this.props.play)}
-                <div>{this.props.play?"jogar":"parar"}</div>
-             </div>
-            </>
+            <div onClick={()=> ""}>{this.props.play?"parar":"jogar"}</div>
         )
     }
 }
