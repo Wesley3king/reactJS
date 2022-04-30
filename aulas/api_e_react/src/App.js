@@ -1,6 +1,7 @@
 import React from 'react';
 import Retornar from './Retornar';
 import RetornarFuncional from './RetornarFuncional';
+import Fetch from './Fetch';
 import './App.css';
 
 function App() {
@@ -11,9 +12,13 @@ function App() {
         <Retornar />
       </section>
       <section>
-        <h1>#40 - consumo de api em componentes funcionais</h1>
+        <h2>#40 - consumo de api em componentes funcionais</h2>
 
         <RetornarFuncional />
+      </section>
+      <section>
+          <h2>#41 - consumo de api com fetch</h2>
+          <Fetch />
       </section>
     </div>
   );
