@@ -18,6 +18,7 @@ export default class Fetch extends React.Component {
     render () {
         return (
             <div>
+                <h2>#41 - consumo de api com fetch</h2>
                 {this.state.carros.map(carro => <div key={carro.id}>{carro.id} - {carro.modelo} : {carro.marca}</div>)}
             </div>
         )

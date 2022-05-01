@@ -3,12 +3,21 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Retornar from './Retornar';
+import RetornarFuncional from './RetornarFuncional';
+import Fetch from './Fetch';
+import {BrowserRouter,Routes, Route} from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <BrowserRouter>
+    <Routes>
+          <Route path='/' element={<App />} />
+          <Route path='/Fetch' element={<Fetch />}/>
+          <Route path='/Retornar' element={<Retornar />}/>
+          <Route path='/RetornarFuncional' element={<RetornarFuncional />}/>
+    </Routes>
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function

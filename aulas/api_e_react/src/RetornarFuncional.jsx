@@ -11,6 +11,7 @@ export default function RetornarFuncional () {
 
     return (
         <div>
+            <h2>#40 - consumo de api em componentes funcionais</h2>
             {carros.map(carro=> <div key={carro.id}>{carro.id} - {carro.modelo} : {carro.marca}</div>)}
         </div>
     )
