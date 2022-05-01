@@ -11,6 +11,7 @@ function App() {
           <Link to='/Fetch'> teste com fetch</Link>
           <Link to='/Retornar'> teste com axios</Link>
           <Link to='/RetornarFuncional'>teste em componentes funcionais com axios</Link>
+          <Link to='/Lista'>atributo key em react</Link>
         </nav>
       </section>
     </div>

@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import Retornar from './Retornar';
 import RetornarFuncional from './RetornarFuncional';
 import Fetch from './Fetch';
+import Keyatribute from './Keyatribute';
 import {BrowserRouter,Routes, Route} from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -16,6 +17,7 @@ root.render(
           <Route path='/Fetch' element={<Fetch />}/>
           <Route path='/Retornar' element={<Retornar />}/>
           <Route path='/RetornarFuncional' element={<RetornarFuncional />}/>
+          <Route path='/Lista' element={<Keyatribute />} />
     </Routes>
   </BrowserRouter>
 );
