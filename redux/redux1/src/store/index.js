@@ -1,15 +1,10 @@
-import { createStore } from "redux";
+import { createStore, combineReducers } from "redux";
 
-const INITIAL_STATE = [
-    "estudando redux",
-    "estudando react",
-    "estudando node",
-    "estudando SQL",
-    "estudando mongoDB"
-
-]
-function reducer (state = INITIAL_STATE, action) {
-    return state;
+import reducer from "./estudos/index.js";
+let obj = {
+    estudos : reducer,
 }
+console.log(obj);
+const rootReducer = combineReducers(obj);
 
-export default createStore(reducer);
+export default createStore(rootReducer);
