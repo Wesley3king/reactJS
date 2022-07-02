@@ -3,6 +3,8 @@ import './App.css';
 import Aula3 from './Aula3';
 import { useSelector, useDispatch } from 'react-redux';
 import {add_estudo} from './store/estudos';
+import {showMessage, hideMessage} from './store/layout';
+
 
 function App() {
 
@@ -21,6 +23,10 @@ function App() {
     dispatch(add_estudo(form));
 
     setForm('');
+
+    dispatch(showMessage());
+
+    setTimeout(()=>{ dispatch(hideMessage()); console.log("dispachar a mensagem")}, 2500);
   }
 
   return (
