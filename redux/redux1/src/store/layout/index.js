@@ -14,6 +14,25 @@ export default (state = initialState, action) => {
     };
 };
 
+// Actions types
+export const Types = { 
+    showMessage: "showMessage",
+    hideMessage: "hideMessage"
+ };
+//actions creators
+export const Creators = {
+    showMessage : () => {
+        return {
+            type : Types.showMessage
+        };
+    },
+    hideMessage : () => {
+        return {
+            type : Types.hideMessage
+        };
+    }
+};
+
 export const showMessage = () => {
     console.log("foi");
     return {

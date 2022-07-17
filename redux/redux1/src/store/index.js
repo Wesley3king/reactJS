@@ -1,10 +1,10 @@
 import { createStore, combineReducers } from "redux";
 
+import layoutMessage from "./layout";
 import reducer from "./estudos/index.js";
-import layoutMessage from "./layout"
 let obj = {
+    layout : layoutMessage,
     estudos : reducer,
-    layout : layoutMessage
 }
 console.log(obj);
 const rootReducer = combineReducers(obj);
