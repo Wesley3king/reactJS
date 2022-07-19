@@ -4,7 +4,9 @@ import Aula3 from './Aula3';
 import { useSelector, useDispatch } from 'react-redux';
 import {add_estudo} from './store/ducks/estudos';
 import {showMessage, hideMessage} from './store/ducks/layout';
-import { getAllEstudos } from './store/fetchActions';
+import { getAllEstudos, add_learning_fetch } from './store/fetchActions';
+
+import api from "./services/api";
 
 function App() {
 
@@ -17,13 +19,18 @@ function App() {
     console.log(form);
   }
 
-  useEffect(()=> { dispatch(getAllEstudos()) },[]);
+  useEffect(()=> { dispatch(getAllEstudos()) },[ dispatch ]);
 
   function onSubmit (e) {
     e.preventDefault();
 
-    console.log(form);
-    dispatch(add_estudo(form));
+    console.log("it is the form ",form);
+
+    api.post('http://127.0.0.1:4000/add', {texto: form})
+            .then(res => { console.log(res.data);dispatch(add_estudo(res.data))})
+            .catch(console.log);
+
+    //add_learning_fetch({texto: form});
 
     setForm('');
 
@@ -36,7 +43,7 @@ function App() {
     <div className='App'>
       <h1> estudando redux </h1>
       <div>
-        {study.map(str => <p>{str}</p>)}
+        {study.map( obj => <p>{obj["texto"]}</p>)}
       </div>
       <div>
         <hr />

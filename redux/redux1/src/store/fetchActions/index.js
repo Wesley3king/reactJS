@@ -1,26 +1,27 @@
 import api from "../../services/api";
 import { FetchEstudos, add_estudo } from "../ducks/estudos/index";
 
+//import { useDispatch } from "react-redux";
+
 export const getAllEstudos = () => {
 
     return dispatch => {
         api.get('http://127.0.0.1:4000/')
             .then(res => {
                 console.log(res.data);
-                let data = []
-                for(let e of res.data.message){
-                    data.push(e.texto);
-                }
-                dispatch(FetchEstudos(data));
+                dispatch(FetchEstudos(res.data.message));
             })
             .catch(console.log);
-    }
+    };
 };
 
-export const add_car_fetch = estudo => {
+export const add_learning_fetch = estudo => {
+    console.log("add : ",estudo);
     return dispatch => {
-        api.post('http://127.0.0.1:4000/add', {})
-        .then(res => { dispatch(add_estudo())})
-        .catch(console.log);
-    }
+        console.log("kkkkkkk",estudo);
+        api.post('http://127.0.0.1:4000/add', estudo)
+            .then(res => { 
+                dispatch(add_estudo(res.data))
+            }).catch(console.log);
+    };
 }

@@ -14,6 +14,7 @@ class Controler {
 
     createLearning = async (req, res) => {
         const data = await this.texto.create(req.body);
+        console.log("chegou aqui");
         return res.status(201).json(data);
     }
 
