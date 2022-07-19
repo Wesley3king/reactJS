@@ -1,12 +1,12 @@
-import { createStore, combineReducers } from "redux";
+//import { createStore, combineReducers } from "redux";
+import { configureStore } from "@reduxjs/toolkit";
 
-import layoutMessage from "./layout";
-import reducer from "./estudos/index.js";
-let obj = {
-    layout : layoutMessage,
-    estudos : reducer,
-}
-console.log(obj);
-const rootReducer = combineReducers(obj);
+import layoutMessage from "./ducks/layout";
+import reducer from "./ducks/estudos/index.js";
 
-export default createStore(rootReducer);
+export default configureStore({
+    reducer: {
+        estudos: reducer,
+        layout: layoutMessage
+    }
+});
