@@ -1,0 +1,15 @@
+import { createAction, createReducer } from "@reduxjs/toolkit";
+
+//INITIAL STATE
+const INITIAL_STATE = [
+
+]
+//ACTIONS
+export const addItem = createAction("ADD_ITEM");
+export const removeItem = createAction("REMOVE_ITEM");
+
+// REDUCER
+export default createReducer(INITIAL_STATE, {
+    [addItem.type] : (state, action) => [...state, action.payload],
+    [removeItem.type] : (state, action) => state.filter(item => item !== action.payload),
+})
