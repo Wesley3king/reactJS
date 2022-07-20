@@ -2,6 +2,7 @@ import React,{useState, useEffect} from 'react';
 import './App.css';
 import Aula3 from './Aula3';
 import Aula4 from './Aula4';
+import Form from './componentes/Form';
 import { useSelector, useDispatch } from 'react-redux';
 import {add_estudo} from './store/ducks/estudos';
 import {showMessage, hideMessage} from './store/ducks/layout';
@@ -16,11 +17,14 @@ function App() {
   const [form, setForm] = useState('');
   const study = useSelector(state => state.estudos);
   const noShop = useSelector(state => state.shop);
+  //autenticação
+  const auth = useSelector(state => state.auth.isAuth);
+  //console.log(`autenticação : `, auth);
 
   function formChange (e) {
     setForm(e.target.value);
     console.log(form);
-  }
+  };
 
   useEffect(()=> { dispatch(getAllEstudos()) },[ dispatch ]);
 
@@ -57,14 +61,9 @@ function App() {
           </div>)}
         </div>
       </React.Fragment>
-      <div>
-        <hr />
-        <h1>aula 02 - inserindo dados na store</h1>
-        <form>
-          <input placeholder='adicionar estudo' value={form.name} onChange={formChange}></input>
-          <button onClick={onSubmit}>adicionar</button>
-        </form>
-      </div>
+      <>
+       <Form form={form} formChange={formChange} onSubmit={onSubmit} auth={auth}/>
+      </>
       <section>
         <Aula3 />
       </section>
