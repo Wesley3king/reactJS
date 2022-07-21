@@ -1,7 +1,8 @@
 import { createAction, createReducer } from "@reduxjs/toolkit";
 
 const initialState = {
-    showMessage: false
+    showMessage: false,
+    messages: []
  };
 
 // Actions types
@@ -13,20 +14,14 @@ export const Types = {
 export const showMessage = createAction(Types.showMessage);
 export const hideMessage = createAction(Types.hideMessage);
 
+export const addMessage = createAction('ADD_MESSAGE');
+export const removeMessage = createAction('REMOVE_MESSAGE');
+
+
 //criar o reducer
 export default createReducer(initialState, {
     [showMessage.type]: (state,action)=> ({...state, showMessage: true}),
-    [hideMessage.type]: (state,action)=> ({...state, showMessage: false})
+    [hideMessage.type]: (state,action)=> ({...state, showMessage: false}),
+    [addMessage.type]: (state, { payload })=> ({...state, messages: [ ...state.messages, payload ]}),
+    [removeMessage.type]: (state, { payload })=> ({...state, messages: state.messages.filter( msg => msg !== payload)})
 });
-/*
-export default (state = initialState, action) => {
-    switch (action.type) {
-        case showMessage.type : 
-        console.log("mostrar a menssagem");
-            return {...state, showMessage : true};
-        case hideMessage.type :
-            return {...state, showMessage: false};
-        default : 
-            return state;
-    };
-};*/

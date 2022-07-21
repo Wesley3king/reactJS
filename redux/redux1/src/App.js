@@ -5,9 +5,9 @@ import Aula4 from './Aula4';
 import Form from './componentes/Form';
 import { useSelector, useDispatch } from 'react-redux';
 import {add_estudo} from './store/ducks/estudos';
-import {showMessage, hideMessage} from './store/ducks/layout';
-import { getAllEstudos, add_learning_fetch } from './store/fetchActions';
-import { addItem, removeItem } from './store/ducks/selected';
+import {showMessage, hideMessage, addMessage, removeMessage} from './store/ducks/layout';
+import { getAllEstudos } from './store/fetchActions';
+import { addItem } from './store/ducks/selected';
 
 import api from "./services/api";
 
@@ -48,7 +48,10 @@ function App() {
 
   function addShop (item) {
     console.log(item.target.innerText);
+    dispatch(addMessage(` ${item.target.innerText} foi adicionado com sucesso! `));
     dispatch(addItem(item.target.innerText));
+
+    setTimeout(() => dispatch(removeMessage(` ${item.target.innerText} foi adicionado com sucesso! `)), 2500);
   }
 
   return (

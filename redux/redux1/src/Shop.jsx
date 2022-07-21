@@ -1,8 +1,10 @@
 import React from "react";
+import Message from "./componentes/Message";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { BsFillTrashFill } from "react-icons/bs";
 import { removeItem } from "./store/ducks/selected";
+import { removeMessage, addMessage } from "./store/ducks/layout";
 
 import './App.css';
 
@@ -10,10 +12,15 @@ export default function Shop () {
 
     const dispatch = useDispatch();
     const itens = useSelector(state => state.shop);
+    const messages = useSelector(state => state.layout.messages);
+
 
     function removerItem (item) {
         console.log(item.target.innerText, item);
+
+        dispatch(addMessage(`${item.target.innerText} foi removido com sucesso!`));
         dispatch(removeItem(item.target.innerText));
+        setTimeout(()=> {dispatch(removeMessage(`${item.target.innerText} foi removido com sucesso!`)); console.log(`${item.target.innerText} foi removido com sucesso!`)}, 2500);
     }
     return (
         <div className="App">
@@ -27,6 +34,11 @@ export default function Shop () {
                         { itens.length === 0 ? <p> ainda não temos nada selecionado!</p> : itens.map( item => <div key={item} className="flex" onClick={(e)=> removerItem(e)}><div><p>{item}  </p></div><BsFillTrashFill /></div>)}
                     </section>
                 </React.Fragment>
+                <hr />
+                <section>
+                    { messages.map( msg => <Message key={msg} text={msg}/>) }
+                </section>
+                <hr />
             </main>
 
             <footer>
