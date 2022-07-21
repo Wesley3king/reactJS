@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 export default function Aula3 (props) {
     const messages = useSelector((state)=> state.layout);
 
-    console.log(messages.messages)
+    console.log(messages.messages);
 
     return (
         <div>

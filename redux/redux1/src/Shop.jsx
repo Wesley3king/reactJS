@@ -17,10 +17,10 @@ export default function Shop () {
 
     function removerItem (item) {
         console.log(item.target.innerText, item);
-
-        dispatch(addMessage(`${item.target.innerText} foi removido com sucesso!`));
+        let txt = `${item.target.innerText} foi removido com sucesso!`;
+        dispatch(addMessage(txt));
         dispatch(removeItem(item.target.innerText));
-        setTimeout(()=> {dispatch(removeMessage(`${item.target.innerText} foi removido com sucesso!`)); console.log(`${item.target.innerText} foi removido com sucesso!`)}, 2500);
+        setTimeout(()=> dispatch(removeMessage(txt)), 2500);
     }
     return (
         <div className="App">
