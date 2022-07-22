@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import Shop from './Shop';
+import Login from './Login';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from "react-redux";
 import store from './store';
@@ -17,7 +18,8 @@ root.render(
          <React.StrictMode>
           <HashRouter>
             <Routes>
-              <Route path='/' element={<App /> } />
+              <Route path='/' element={<Login /> } />
+              <Route path='/home' element={<App /> } />
               <Route path='/shop' element={<Shop /> } />
             </Routes>
           </HashRouter>

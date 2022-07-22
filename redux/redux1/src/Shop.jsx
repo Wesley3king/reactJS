@@ -43,7 +43,7 @@ export default function Shop () {
 
             <footer>
                 <div>
-                    <Link to='/'><p>&gt; voltar ao main page</p></Link>
+                    <Link to='/home'><p>&gt; voltar ao main page</p></Link>
                 </div>
             </footer>
         </div>
