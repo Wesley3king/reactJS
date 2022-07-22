@@ -1,4 +1,5 @@
 import React,{useState, useEffect} from 'react';
+import { Link } from 'react-router-dom';
 import './App.css';
 import Aula3 from './Aula3';
 import Aula4 from './Aula4';
@@ -6,8 +7,9 @@ import Form from './componentes/Form';
 import { useSelector, useDispatch } from 'react-redux';
 import {add_estudo} from './store/ducks/estudos';
 import {showMessage, hideMessage, addMessage, removeMessage} from './store/ducks/layout';
-import { getAllEstudos } from './store/fetchActions';
+import { getAllEstudos, addLearningFetch } from './store/fetchActions';
 import { addItem } from './store/ducks/selected';
+import Logout from './services/Logout.service';
 
 import api from "./services/api";
 
@@ -37,7 +39,7 @@ function App() {
             .then(res => { console.log(res.data);dispatch(add_estudo(res.data))})
             .catch(console.log);
 
-    //add_learning_fetch({texto: form});
+    //addLearningFetch({texto: form});
 
     setForm('');
 
@@ -52,6 +54,10 @@ function App() {
     dispatch(addItem(item.target.innerText));
 
     setTimeout(() => dispatch(removeMessage(` ${item.target.innerText} foi adicionado com sucesso! `)), 2500);
+  };
+  //logout
+  function authLogout () {
+    auth && dispatch(Logout());
   }
 
   return (
@@ -72,6 +78,11 @@ function App() {
       </section>
       <section>
         <Aula4 shopItems={noShop}/>
+      </section>
+      <section>
+        <hr />
+        <h2>aula 12 implementando o login e logout</h2>
+        <Link to="/"><div onClick={()=> authLogout()}><p>&gt; {auth ? "logout" : "login"}</p></div></Link>
       </section>
     </div>
   );

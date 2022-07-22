@@ -8,6 +8,11 @@ export default function Login (props) {
 const [form, setForm] = useState({ username: "", password: "" });
 const dispatch = useDispatch();
 
+const messages = useSelector(state => state.layout.messages);
+
+const auth = useSelector(state => state.auth.isAuth);
+auth && window.location.assign("/#/home");
+auth && window.location.reload();
 const changeForm = (e) => {
     let { name, value }  = e.target;
     setForm({...form, [name]: value});
@@ -35,6 +40,10 @@ const onSubmit = (e) => {
 
                     <button type="submit"> login</button>
                 </form>
+
+                <section>
+                    {messages.map( msg => <p style={{border: "1px solid red", padding:"5px"}}>{msg}</p>)}
+                </section>
             </main>
         </div>
     )

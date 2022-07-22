@@ -1,8 +1,8 @@
 import { createAction, createReducer } from "@reduxjs/toolkit";
 
 const INITIAL_STATE = {
-    isAuth: true,
-}
+    isAuth: localStorage.getItem('token'),
+};
 
 export const login = createAction('LOGIN');
 export const logout = createAction('LOGOUT');

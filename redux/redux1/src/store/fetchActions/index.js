@@ -1,6 +1,8 @@
 import api from "../../services/api";
-import { FetchEstudos, add_estudo } from "../ducks/estudos/index";
+import { fetchEstudos, add_estudo } from "../ducks/estudos/index";
 import { login } from "../ducks/auth/index";
+import { addMessage, removeMessage } from "../ducks/layout";
+
 
 //import { useDispatch } from "react-redux";
 
@@ -10,20 +12,20 @@ export const getAllEstudos = () => {
         api.get('http://127.0.0.1:4000/')
             .then(res => {
                 console.log(res.data);
-                dispatch(FetchEstudos(res.data.message));
-            })
-            .catch(console.log);
+                dispatch(fetchEstudos(res.data.message));
+            }).catch(console.log);
     };
 };
 
-export const add_learning_fetch = estudo => {
-    console.log("add : ",estudo);
+export const addLearningFetch = (estudo) => {
+
     return dispatchEvent => {
-        console.log("kkkkkkk",estudo);
         api.post('http://127.0.0.1:4000/add', estudo)
-            .then(res => { 
+            .then(res => {
+                console.log(res);
                 dispatchEvent(add_estudo(res.data))
-            }).catch(console.log);
+            })
+            .catch(console.log);
     };
 };
 
@@ -37,8 +39,13 @@ export const authLogin = (user) => {
                 localStorage.user = res.data.user.username;
                 localStorage.password = res.data.user.password;
                 dispatchEvent(login());
-                window.location.pathname = "/home"
+                window.location.assign("/#/home");
                 })
-            .catch(console.log);
+            .catch(e => {
+                console.log(e);
+                dispatchEvent(addMessage(e.response.data.message));
+
+                setTimeout(()=> dispatchEvent(removeMessage(e.response.data.message)), 4000)
+            });
     };
 };
