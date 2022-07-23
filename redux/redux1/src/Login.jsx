@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { authLogin } from "./store/fetchActions";
 import './App.css';
 
-export default function Login (props) {
+export default function Login () {
 
 const [form, setForm] = useState({ username: "", password: "" });
 const dispatch = useDispatch();
