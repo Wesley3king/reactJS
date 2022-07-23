@@ -2,6 +2,7 @@ import React from "react";
 import Header from '../../components/header';
 import { connect } from "react-redux";
 import { addSelected } from "../../reducers/ducks/selected";
+import { Link } from "react-router-dom";
 import '../../css/index.css';
 
 function Home (props) {
@@ -17,9 +18,13 @@ function Home (props) {
                     <h2>menu</h2>
                     <div className="list_products_div">
                         <ul>
-                            { props.produtos.map( product => <li onClick={()=> props.adicionarSelecionado(product)}><p>{product}</p></li>) }
+                            { props.produtos.map( product => <li key={product} onClick={()=> props.adicionarSelecionado(product)}><p>{product}</p></li>) }
                         </ul>
                     </div>
+                </section>
+                <section>
+                    <hr />
+                    <Link to="/middleware">&gt; middlewares</Link>
                 </section>
             </main>
         </div>

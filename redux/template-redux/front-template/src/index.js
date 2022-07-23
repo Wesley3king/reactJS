@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 import store from "./reducers/index.js"
 import Home from './app/home/Home';
+import Middleware from './app/middleware/Middleware.jsx';
 import reportWebVitals from './reportWebVitals';
 import { HashRouter, Routes, Route } from "react-router-dom";
 import './index.css';
@@ -16,6 +17,7 @@ root.render(
       <HashRouter>
         <Routes>
           <Route path='/' element={<Home /> } />
+          <Route path='/middleware' element={<Middleware /> } />
         </Routes>
       </HashRouter>
     </Provider>
