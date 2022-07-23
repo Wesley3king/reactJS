@@ -26,7 +26,11 @@ const INITIAL_STATE = [
 const products = createSlice({
     name: "products",
     initialState: INITIAL_STATE,
-    reducers:{
-
+    reducers: {
+        addProduct (state, { payload }) {
+            return [...state, payload];
+        }
     }
-})
+});
+
+export default products.reducer;
