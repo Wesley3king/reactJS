@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import store from "./reducers/index.js"
 import Home from './app/home/Home';
 import Middleware from './app/middleware/Middleware.jsx';
+import Cursos from './app/cursos/Cursos.jsx';
 import reportWebVitals from './reportWebVitals';
 import { HashRouter, Routes, Route } from "react-router-dom";
 import './index.css';
@@ -18,6 +19,7 @@ root.render(
         <Routes>
           <Route path='/' element={<Home /> } />
           <Route path='/middleware' element={<Middleware /> } />
+          <Route path='/cursos' element={<Cursos /> } />
         </Routes>
       </HashRouter>
     </Provider>

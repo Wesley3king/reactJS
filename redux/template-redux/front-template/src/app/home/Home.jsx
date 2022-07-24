@@ -25,6 +25,8 @@ function Home (props) {
                 <section>
                     <hr />
                     <Link to="/middleware">&gt; middlewares</Link>
+                    <br />
+                    <Link to="/cursos">&gt; cursos</Link>
                 </section>
             </main>
         </div>

@@ -17,3 +17,37 @@ ul{
 
     transform: translate(-25%);
 }
+
+/* - curso - */
+.header{
+    display: flex;
+    flex-direction: row;
+}
+.curso_item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    margin: 19px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.219);
+}
+.curso_item div{
+    margin: 10px;
+    word-break: break-all;
+}
+.car{
+    border: 1px solid black;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.car:hover{
+    border: 1px solid green;
+}

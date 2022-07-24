@@ -4,6 +4,7 @@ import products from './ducks/products/index';
 import selected from "./ducks/selected";
 import usuarios from "./ducks/usuarios";
 import drinks from "./ducks/drinks";
+import cursos from "./ducks/cursos";
 import { removeUser } from "./ducks/usuarios";
 
 
@@ -33,6 +34,7 @@ export default configureStore({
         selected: selected,
         usuarios: usuarios,
         drinks: drinks,
+        cursos: cursos,
     },
     middleware: getDefaultMiddleware => getDefaultMiddleware().concat(loggerMiddleware).concat(confirmMiddleware),
 });
