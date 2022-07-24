@@ -7,11 +7,12 @@ export default function Curso (props) {
 
     const dispatch = useDispatch();
     const adicionar = (obj) => {
+        console.log(obj)
         dispatch(addCursoSelected(obj))
     };
 
     return (
-        <div className="curso_item" onClick={()=> adicionar(props.obj)}>
+        <div className="curso_item" onClick={()=> adicionar(props.data)}>
             <p><strong>{props.data.curso}</strong></p>
             <div>
                 <p>{props.data.descricao}</p>

@@ -5,6 +5,7 @@ import store from "./reducers/index.js"
 import Home from './app/home/Home';
 import Middleware from './app/middleware/Middleware.jsx';
 import Cursos from './app/cursos/Cursos.jsx';
+import Car from './app/carrinho/Car.jsx';
 import reportWebVitals from './reportWebVitals';
 import { HashRouter, Routes, Route } from "react-router-dom";
 import './index.css';
@@ -20,6 +21,7 @@ root.render(
           <Route path='/' element={<Home /> } />
           <Route path='/middleware' element={<Middleware /> } />
           <Route path='/cursos' element={<Cursos /> } />
+          <Route path='/carrinho' element={<Car /> } />
         </Routes>
       </HashRouter>
     </Provider>

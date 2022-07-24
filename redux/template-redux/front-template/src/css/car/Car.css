@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+
+.table_itens{
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+td, th{
+    padding: 3px;
+}
