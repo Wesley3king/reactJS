@@ -39,7 +39,7 @@ export default function Car () {
                 <Link to="/cursos" style={{textDecoration: "none", color: "black"}}><div className="car">{selecionados.length}</div></Link>
             </header>
 
-            <main className="car">
+            <main className="cart">
                 <hr />
                 <section>
                     <h2>lista de compras</h2>
@@ -59,6 +59,12 @@ export default function Car () {
                             </tr>
                             )}
                     </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colSpan="2">total</th>
+                            <td>{SelecionadosContados.reduce((acc, item) => acc + (item.preco * item.quantidity), 0)}</td>
+                        </tr>
+                    </tfoot>
                     </table>
                 </section>
             </main>

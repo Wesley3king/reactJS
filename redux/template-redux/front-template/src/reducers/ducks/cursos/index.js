@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { createSelector } from "reselect";
 
 export class carItem {
     constructor (obj) {
@@ -42,7 +43,12 @@ function verifyExistItem(state, payload) {
     }
     return [...state, newItem]
 }
-
+//seletor
+/*export const selecionados = createSelector( 
+    state => state.cursos.selecionados,
+    items => {
+        return items;
+})*/
 export const { addCursoSelected, removeCursoSelected } = cursos.actions;
 
 export default cursos.reducer;
