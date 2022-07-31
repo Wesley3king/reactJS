@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { Suspense } from "react";
 import { Link } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
 import "../../css/car/Car.css";
+import { useSelector, useDispatch } from "react-redux";
+const ProfilePage = React.lazy(() => import('./ProfilePage')); // Carregado quando necessário
 
 export default function Car () {
 

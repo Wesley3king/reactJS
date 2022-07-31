@@ -1,4 +1,6 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState,useEffect, Suspense} from 'react';
+import Skeleton,{  SkeletonTheme  } from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 import Page1 from './Page1';
 import Page2 from './Page2';
 import './App.css';
@@ -65,6 +67,15 @@ function App() {
    <div className='App'>
     
     {load()}
+    <SkeletonTheme baseColor='rgb(100,100,100)' highlightColor='rgb(130,130,130)' duration={1.7}>
+    <Suspense fallback={<p>jhlfeb</p>}>
+      
+        <Skeleton count={5} style={{width: "300px"}}/>
+        <Skeleton count={1} circle="true" style={{width: "100px", height:"100px"}}/>
+        
+            </Suspense>
+      </SkeletonTheme>
+    <p>{ "tst" || <Skeleton />}</p>
    </div>
   );
 }
